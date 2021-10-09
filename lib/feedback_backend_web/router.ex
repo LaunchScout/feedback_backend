@@ -17,11 +17,12 @@ defmodule FeedbackBackendWeb.Router do
   scope "/", FeedbackBackendWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
+    get "/", FeedbackController, :index
+
   end
 
   # Other scopes may use custom stacks.
-  scope "/api", FeedbackBackendWeb do
+  scope "/api", FeedbackBackendWeb.Api do
     pipe_through :api
     resources "/feedbacks", FeedbackController, except: [:new, :edit]
   end
