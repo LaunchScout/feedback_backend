@@ -1,0 +1,23 @@
+<h1>Listing feedbacks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Message</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for feedback <- @feedbacks do %>
+    <tr>
+      <td><%= feedback.name %></td>
+      <td><%= feedback.email %></td>
+      <td><%= feedback.message %></td>
+
+    </tr>
+<% end %>
+  </tbody>
+</table>
